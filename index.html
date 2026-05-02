@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,23 +9,26 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --cream: #FDF0F5;
+    --cream: #FFF8F5;
     --ink: #1C0A14;
     --ink-soft: #4A2038;
     --ink-muted: #9A6080;
-    --terracotta: #C4386A;
-    --terracotta-light: #E8709A;
-    --gold: #E8920A;
-    --warm-white: #FFF5F8;
-    --border: rgba(196,56,106,0.15);
-    --border-strong: rgba(196,56,106,0.3);
+    --pink: #C4386A;
+    --pink-light: #E8709A;
+    --gold: #D4820A;
+    --gold-light: #F0A830;
+    --blush: #FDE8F0;
+    --peach: #FDF4EE;
+    --white: #FFFFFF;
+    --border: rgba(196,56,106,0.13);
+    --border-strong: rgba(196,56,106,0.28);
   }
 
   html { scroll-behavior: smooth; }
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
+    background: var(--white);
     color: var(--ink);
     font-size: 16px;
     line-height: 1.6;
@@ -35,594 +37,363 @@
 
   /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 3rem;
-    background: rgba(245,242,236,0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.1rem 3rem;
+    background: rgba(255,255,255,0.93);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-bottom: 0.5px solid var(--border);
   }
-
   .nav-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    color: var(--ink);
-    text-decoration: none;
+    font-size: 1.05rem; font-weight: 400; letter-spacing: 0.05em;
+    color: var(--ink); text-decoration: none;
   }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
-    font-size: 0.78rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    text-decoration: none;
+    font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft); text-decoration: none;
     transition: color 0.2s;
   }
-
-  .nav-links a:hover { color: var(--terracotta); }
+  .nav-links a:hover { color: var(--pink); }
 
   /* HERO */
   .hero {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 68px;
   }
-
   .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6rem 4rem 6rem 5rem;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 4rem 5rem 5rem; position: relative;
   }
-
   .hero-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    margin-bottom: 1.5rem;
+    font-size: 0.7rem; font-weight: 400; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--pink); margin-bottom: 1.25rem;
   }
-
   .hero-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 6vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.0;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.5rem;
-    color: var(--ink);
+    font-size: clamp(3.2rem, 5.5vw, 5rem);
+    font-weight: 300; line-height: 1.0; letter-spacing: -0.01em;
+    margin-bottom: 1.5rem; color: var(--ink);
   }
-
   .hero-name em {
     font-style: italic;
-    background: linear-gradient(135deg, #C4386A 0%, #E8920A 50%, #E8709A 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: linear-gradient(120deg, #C4386A 0%, #E8920A 60%, #E8709A 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-
   .hero-tagline {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--ink-soft);
-    line-height: 1.7;
-    max-width: 380px;
-    margin-bottom: 3rem;
+    font-size: 1rem; font-weight: 300; color: var(--ink-soft);
+    line-height: 1.8; max-width: 380px; margin-bottom: 2.5rem;
   }
-
-  .hero-cta {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 
   .btn-primary {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: var(--ink);
-    color: var(--cream);
-    font-size: 0.78rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
+    display: inline-block; padding: 0.75rem 1.75rem; background: var(--pink);
+    color: #fff; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none; border-radius: 2px;
     transition: background 0.2s;
   }
-
-  .btn-primary:hover { background: var(--terracotta); }
+  .btn-primary:hover { background: var(--gold); }
 
   .btn-ghost {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    border: 0.5px solid var(--border-strong);
-    color: var(--ink);
-    font-size: 0.78rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
+    display: inline-block; padding: 0.75rem 1.75rem;
+    border: 0.5px solid var(--border-strong); color: var(--ink);
+    font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none; border-radius: 2px;
     transition: border-color 0.2s, color 0.2s;
   }
-
-  .btn-ghost:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .btn-ghost:hover { border-color: var(--pink); color: var(--pink); }
 
   .hero-right {
-    position: relative;
-    background: var(--ink);
-    overflow: hidden;
+    position: relative; overflow: hidden; background: var(--blush);
   }
-
   .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
-    display: block;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center; display: block;
   }
 
-  .hero-image-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(160deg, #3D0A28 0%, #7A1040 30%, #C4386A 60%, #E8920A 100%);
-    display: flex;
-    align-items: flex-end;
-    padding: 3rem;
+  /* small gold glitter star decorations on hero */
+  .hero-stars {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; overflow: hidden;
+  }
+  .star {
+    position: absolute;
+    font-size: 1rem; opacity: 0.55;
+    animation: float-star 5s ease-in-out infinite;
+  }
+  .star:nth-child(1) { top: 8%; left: 6%; font-size: 1.3rem; animation-delay: 0s; }
+  .star:nth-child(2) { top: 20%; right: 8%; font-size: 0.8rem; animation-delay: 1s; }
+  .star:nth-child(3) { bottom: 30%; left: 10%; font-size: 0.7rem; animation-delay: 2s; }
+  .star:nth-child(4) { bottom: 12%; right: 12%; font-size: 1.1rem; animation-delay: 0.5s; }
+
+  @keyframes float-star {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.55; }
+    50% { transform: translateY(-8px) rotate(15deg); opacity: 0.85; }
   }
 
-  .hero-quote {
+  /* DIVIDER */
+  .divider { width: 100%; height: 0.5px; background: var(--border); }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 0.68rem; font-weight: 400; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--pink); margin-bottom: 0.75rem;
+  }
+  .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: rgba(245,242,236,0.5);
-    line-height: 1.6;
-    max-width: 280px;
-    border-left: 1px solid rgba(184,92,56,0.5);
-    padding-left: 1.25rem;
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+    font-weight: 300; line-height: 1.15; color: var(--ink); margin-bottom: 2.5rem;
   }
 
   /* ABOUT */
-  .section {
-    padding: 7rem 5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.7rem;
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.15;
-    color: var(--ink);
-    margin-bottom: 2.5rem;
-  }
-
-  .divider {
-    width: 100%;
-    height: 0.5px;
-    background: var(--border);
-    margin: 0;
-  }
-
-  /* ABOUT GRID */
   .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    padding: 6rem 5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: var(--warm-white);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    align-items: start; padding: 6rem 5rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .about-text p {
+    font-size: 1rem; font-weight: 300; line-height: 1.9;
+    color: var(--ink-soft); margin-bottom: 1.25rem;
+  }
+  .about-details { display: flex; flex-direction: column; }
+  .detail-item {
+    display: flex; flex-direction: column; gap: 0.3rem;
+    padding: 1.35rem 0; border-bottom: 0.5px solid var(--border);
+  }
+  .detail-item:first-child { padding-top: 0; }
+  .detail-item:last-child { border-bottom: none; }
+  .detail-label {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pink);
+  }
+  .detail-value { font-size: 0.95rem; font-weight: 300; color: var(--ink); line-height: 1.5; }
+  .resume-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 1.75rem; padding: 0.7rem 1.4rem;
+    border: 0.5px solid var(--border-strong); color: var(--pink);
+    font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none; border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .resume-link:hover { background: var(--pink); color: #fff; }
+
+  /* RUNNING / PHOTO */
+  .photo-section {
+    background: var(--peach);
+    padding: 5rem;
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem;
+    align-items: center;
     border-top: 0.5px solid var(--border);
     border-bottom: 0.5px solid var(--border);
   }
-
-  .about-text p {
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--ink-soft);
-    margin-bottom: 1.5rem;
+  .photo-section-img-wrap { position: relative; }
+  .photo-section-img {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover;
+    object-position: center top; display: block; border-radius: 2px;
   }
-
-  .about-details {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-top: 0.5rem;
+  .photo-badge {
+    position: absolute; bottom: -1rem; right: -1rem;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 18px rgba(212,130,10,0.3);
   }
-
-  .detail-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    padding-bottom: 2rem;
-    border-bottom: 0.5px solid var(--border);
+  .photo-text { display: flex; flex-direction: column; }
+  .photo-text .section-title { margin-bottom: 1rem; }
+  .photo-caption {
+    font-size: 0.95rem; font-weight: 300; color: var(--ink-soft);
+    line-height: 1.85; margin-bottom: 2rem;
   }
-
-  .detail-item:last-child { border-bottom: none; padding-bottom: 0; }
-
-  .detail-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--terracotta);
+  .photo-stats { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .photo-stat {
+    display: inline-flex; align-items: baseline; gap: 0.5rem;
+    padding: 0.85rem 1.3rem; background: white;
+    border: 0.5px solid var(--border); border-radius: 2px;
   }
-
-  .detail-value {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--ink);
-    line-height: 1.5;
+  .photo-stat-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300;
+    background: linear-gradient(120deg, var(--pink) 0%, var(--gold) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
+  .photo-stat-label { font-size: 0.78rem; font-weight: 300; color: var(--ink-muted); }
 
   /* SKILLS */
-  .skills-section {
-    padding: 6rem 5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
+  .skills-section { padding: 6rem 5rem; max-width: 1200px; margin: 0 auto; }
   .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 0;
-    margin-top: 3rem;
-    border-top: 0.5px solid var(--border);
-    border-left: 0.5px solid var(--border);
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    gap: 0; margin-top: 2.5rem;
+    border-top: 0.5px solid var(--border); border-left: 0.5px solid var(--border);
   }
-
   .skill-cell {
-    padding: 1.5rem 1.25rem;
-    border-right: 0.5px solid var(--border);
-    border-bottom: 0.5px solid var(--border);
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--ink-soft);
-    transition: background 0.2s, color 0.2s;
-    cursor: default;
+    padding: 1.35rem 1.2rem;
+    border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);
+    font-size: 0.85rem; font-weight: 400; color: var(--ink-soft);
+    transition: background 0.2s, color 0.2s; cursor: default;
   }
+  .skill-cell:hover { background: var(--pink); color: #fff; }
+  .skill-cell:hover small { color: rgba(255,255,255,0.7); }
+  .skill-cell .skill-icon { font-size: 1.2rem; margin-bottom: 0.4rem; display: block; }
 
-  .skill-cell:hover {
-    background: var(--terracotta);
-    color: #FDF0F5;
-  }
-
-  .skill-cell .skill-icon {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-
-  /* PROJECTS */
-  .projects-section {
-    background: #1C0A14;
-    padding: 7rem 5rem;
-  }
-
-  .projects-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .projects-section .section-label { color: var(--terracotta-light); }
-
-  .projects-section .section-title { color: var(--cream); }
-
-  .projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-top: 4rem;
-    border-top: 0.5px solid rgba(245,242,236,0.15);
-  }
-
-  .project-item {
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    gap: 2.5rem;
-    align-items: start;
-    padding: 3rem 0;
-    border-bottom: 0.5px solid rgba(245,242,236,0.15);
-    text-decoration: none;
-    transition: all 0.25s;
-  }
-
-  .project-item:hover .project-arrow { transform: translateX(4px) translateY(-4px); }
-  .project-item:hover .project-title { color: var(--terracotta-light); }
-
-  .project-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    font-weight: 300;
-    color: rgba(245,242,236,0.2);
-    line-height: 1;
-    padding-top: 0.25rem;
-  }
-
-  .project-content { display: flex; flex-direction: column; gap: 0.75rem; }
-
-  .project-tag {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--terracotta-light);
-    opacity: 0.8;
-  }
-
-  .project-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: var(--cream);
-    line-height: 1.2;
-    transition: color 0.2s;
-  }
-
-  .project-desc {
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: rgba(245,242,236,0.55);
-    line-height: 1.7;
-    max-width: 500px;
-  }
-
-  .project-arrow {
-    font-size: 1.5rem;
-    color: rgba(245,242,236,0.3);
-    align-self: center;
-    transition: transform 0.2s, color 0.2s;
-  }
-
-  .project-item:hover .project-arrow { color: var(--terracotta-light); }
-
-  /* PROJECT IMAGE ROW */
-  .project-image {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.7);
-    transition: filter 0.3s;
-  }
-
-  .project-item:hover .project-image { filter: brightness(0.85); }
-
-  .project-image-placeholder {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: rgba(245,242,236,0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .project-image-placeholder span {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(245,242,236,0.2);
-  }
-
-  /* LANGUAGES */
+  /* TICKER */
   .languages-strip {
+    padding: 2.25rem 0; overflow: hidden;
     background: linear-gradient(90deg, #C4386A 0%, #E8920A 50%, #C4386A 100%);
     background-size: 200% 100%;
-    animation: shimmer-bg 6s linear infinite;
-    padding: 2.5rem 5rem;
-    overflow: hidden;
+    animation: shimmer-bg 7s linear infinite;
   }
-
   @keyframes shimmer-bg {
     0% { background-position: 0% 50%; }
     100% { background-position: 200% 50%; }
   }
-
   .lang-ticker {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-    white-space: nowrap;
-    animation: ticker 20s linear infinite;
+    display: flex; gap: 3rem; align-items: center;
+    white-space: nowrap; animation: ticker 22s linear infinite; padding: 0 2rem;
   }
-
   @keyframes ticker {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
-
   .lang-item {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    color: rgba(253,250,245,0.7);
-    flex-shrink: 0;
+    font-size: 1.4rem; font-style: italic; color: rgba(255,255,255,0.7); flex-shrink: 0;
   }
+  .lang-item strong { font-style: normal; font-weight: 500; color: #fff; margin-right: 0.4rem; }
+  .lang-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.35); flex-shrink: 0; }
 
-  .lang-item strong {
-    font-style: normal;
-    font-weight: 500;
-    color: var(--warm-white);
-    margin-right: 0.5rem;
+  /* PROJECTS */
+  .projects-section {
+    background: var(--white); padding: 7rem 5rem;
+    border-top: 0.5px solid var(--border);
   }
+  .projects-inner { max-width: 1200px; margin: 0 auto; }
+  .projects-list {
+    display: flex; flex-direction: column;
+    margin-top: 3.5rem; border-top: 0.5px solid var(--border);
+  }
+  .project-item {
+    display: grid; grid-template-columns: 70px 1fr 36px;
+    gap: 2rem; align-items: start;
+    padding: 3rem 0; border-bottom: 0.5px solid var(--border);
+    text-decoration: none; transition: padding 0.2s, background 0.2s;
+  }
+  .project-item[href]:hover { background: var(--cream); padding-left: 1rem; padding-right: 1rem; margin: 0 -1rem; }
+  .project-item[href]:hover .project-title { color: var(--pink); }
+  .project-item[href]:hover .project-arrow { transform: translateX(4px) translateY(-4px); color: var(--pink); }
 
-  .lang-dot {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: rgba(253,250,245,0.4);
-    flex-shrink: 0;
+  .project-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300;
+    color: rgba(196,56,106,0.2); line-height: 1; padding-top: 0.2rem;
+  }
+  .project-content { display: flex; flex-direction: column; gap: 0.55rem; }
+  .project-tag {
+    font-size: 0.67rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--pink); opacity: 0.8;
+  }
+  .project-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400;
+    color: var(--ink); line-height: 1.2; transition: color 0.2s;
+  }
+  .project-desc {
+    font-size: 0.87rem; font-weight: 300; color: var(--ink-muted);
+    line-height: 1.75; max-width: 520px; margin-top: 0.2rem;
+  }
+  .project-arrow {
+    font-size: 1.25rem; color: rgba(196,56,106,0.3);
+    align-self: center; transition: transform 0.2s, color 0.2s;
+  }
+  .project-preview {
+    width: 100%; margin-top: 1.25rem; border-radius: 2px;
+    overflow: hidden; border: 0.5px solid var(--border);
+  }
+  .project-preview img {
+    width: 100%; aspect-ratio: 16/7; object-fit: cover;
+    object-position: top; display: block; transition: transform 0.4s;
+  }
+  .project-item[href]:hover .project-preview img { transform: scale(1.025); }
+
+  /* HIBISCUS DIVIDER */
+  .hibiscus-divider {
+    width: 100%; height: 110px; object-fit: cover;
+    object-position: center 30%; display: block; opacity: 0.5;
+  }
+  .hibiscus-fallback {
+    height: 8px;
+    background: linear-gradient(90deg, var(--peach), var(--blush), var(--peach));
   }
 
   /* CONTACT */
   .contact-section {
-    padding: 8rem 5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
+    padding: 7rem 5rem; max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
   }
-
-  .contact-left .section-title { margin-bottom: 1.5rem; }
-
   .contact-tagline {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--ink-soft);
-    line-height: 1.8;
-    margin-bottom: 3rem;
+    font-size: 0.95rem; font-weight: 300; color: var(--ink-soft);
+    line-height: 1.85; margin-bottom: 2.5rem;
   }
-
-  .contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
+  .contact-links { display: flex; flex-direction: column; gap: 0.7rem; }
   .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    color: var(--ink);
-    font-size: 0.9rem;
-    font-weight: 400;
-    padding: 1rem 1.25rem;
-    border: 0.5px solid var(--border);
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none; color: var(--ink); font-size: 0.88rem; font-weight: 400;
+    padding: 1rem 1.25rem; border: 0.5px solid var(--border);
+    transition: border-color 0.2s, color 0.2s, background 0.2s; border-radius: 2px;
   }
-
-  .contact-link:hover {
-    border-color: var(--terracotta);
-    color: var(--terracotta);
-    background: rgba(184,92,56,0.04);
-  }
-
+  .contact-link:hover { border-color: var(--pink); color: var(--pink); background: var(--blush); }
   .contact-link-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    display: block;
-    margin-bottom: 0.2rem;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-muted); display: block; margin-bottom: 0.15rem;
   }
-
-  .contact-link:hover .contact-link-label { color: var(--terracotta); opacity: 0.7; }
+  .contact-link:hover .contact-link-label { color: var(--pink-light); }
 
   .contact-right {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border: 0.5px solid var(--border);
+    border: 0.5px solid var(--border); border-radius: 2px; overflow: hidden;
   }
-
   .contact-stat {
-    padding: 2rem 2.5rem;
-    border-bottom: 0.5px solid var(--border);
+    padding: 1.65rem 2rem; border-bottom: 0.5px solid var(--border);
+    display: flex; align-items: baseline; gap: 0.9rem;
   }
-
   .contact-stat:last-child { border-bottom: none; }
-
   .contact-stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    font-weight: 300;
-    background: linear-gradient(135deg, var(--terracotta) 0%, var(--gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300;
+    background: linear-gradient(120deg, var(--pink) 0%, var(--gold) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     line-height: 1;
-    margin-bottom: 0.35rem;
   }
-
-  .contact-stat-label {
-    font-size: 0.8rem;
-    font-weight: 300;
-    color: var(--ink-muted);
-    letter-spacing: 0.05em;
-  }
+  .contact-stat-label { font-size: 0.8rem; font-weight: 300; color: var(--ink-muted); }
 
   /* FOOTER */
   footer {
-    background: var(--ink);
-    padding: 2.5rem 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 0.5px solid rgba(245,242,236,0.1);
+    background: var(--blush); padding: 2.25rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 0.5px solid var(--border);
   }
-
   .footer-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: rgba(245,242,236,0.4);
-    letter-spacing: 0.05em;
+    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+    font-weight: 300; color: var(--ink-muted); letter-spacing: 0.04em;
   }
+  .footer-note { font-size: 0.7rem; color: var(--ink-muted); letter-spacing: 0.05em; }
 
-  .footer-note {
-    font-size: 0.72rem;
-    color: rgba(245,242,236,0.25);
-    letter-spacing: 0.05em;
-  }
-
-  /* ANIMATIONS */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* FADE IN */
+  .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1.25rem; }
-
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 4rem 2rem; }
-    .hero-right { height: 50vh; }
-
-    .about-grid { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
-    .section { padding: 5rem 2rem; }
-    .skills-section { padding: 5rem 2rem; }
-    .projects-section { padding: 5rem 2rem; }
-    .languages-strip { padding: 2rem; }
-    .contact-section { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
-    footer { flex-direction: column; gap: 0.75rem; padding: 2rem; text-align: center; }
-    .project-item { grid-template-columns: 50px 1fr auto; gap: 1.5rem; }
+    .hero-right { height: 55vw; }
+    .about-grid { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 2.5rem; }
+    .photo-section { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 2.5rem; }
+    .skills-section { padding: 4rem 2rem; }
+    .projects-section { padding: 4rem 2rem; }
+    .contact-section { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+    footer { flex-direction: column; gap: 0.5rem; padding: 2rem; text-align: center; }
+    .project-item { grid-template-columns: 50px 1fr 28px; gap: 1.25rem; }
+    .project-item[href]:hover { margin: 0; padding-left: 0; padding-right: 0; }
   }
 </style>
 </head>
@@ -641,18 +412,22 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">NYU Stern — BTE '29 — New York</p>
+    <p class="hero-eyebrow">NYU Stern · BTE '29 · New York</p>
     <h1 class="hero-name">Lavinia<br><em>Ragunath</em></h1>
     <p class="hero-tagline">Freshman at NYU Stern studying Business, Technology &amp; Entrepreneurship. Curious about the intersection of design, strategy, and what comes next.</p>
     <div class="hero-cta">
       <a href="#work" class="btn-primary">View Work</a>
-      <a href="#contact" class="btn-ghost">Get in Touch</a>
+      <a href="Lavinia_Ragunath_Resume.pdf" target="_blank" class="btn-ghost">↓ Resume</a>
     </div>
   </div>
   <div class="hero-right">
-    <img src="images/headshot.jpg" alt="Portrait of Lavinia Ragunath" class="hero-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-    <div class="hero-image-placeholder" style="display:none;">
-      <p class="hero-quote">Born in Weinheim, Germany.<br>Thinking in five languages.</p>
+    <img src="images/lavinia_headshot.jpg" alt="Portrait of Lavinia Ragunath" class="hero-image">
+    <!-- subtle gold star accents floating over headshot -->
+    <div class="hero-stars">
+      <span class="star" style="color:#F0A830;">✦</span>
+      <span class="star" style="color:#E8709A;">✦</span>
+      <span class="star" style="color:#F0A830;">✦</span>
+      <span class="star" style="color:#C4386A;">✦</span>
     </div>
   </div>
 </section>
@@ -663,9 +438,11 @@
 <div class="about-grid" id="about">
   <div class="about-text fade-in">
     <p class="section-label">About Me</p>
+    <h2 class="section-title">Who I am</h2>
     <p>I'm a freshman at NYU Stern studying Business, Technology, and Entrepreneurship. Originally from Weinheim, Germany, I grew up between cultures and languages — a background that shapes how I think about problems and people.</p>
     <p>Outside of academics, I run, travel when I can, and lose myself in crime novels. I'm drawn to the details: in a story, a city, a design, or a pitch deck.</p>
     <p>I'm interested in how technology reshapes industries — and in being someone who helps shape it rather than just watch it happen.</p>
+    <a href="Lavinia_Ragunath_Resume.pdf" target="_blank" class="resume-link">↓ Download Resume</a>
   </div>
   <div class="about-details fade-in">
     <div class="detail-item">
@@ -681,8 +458,35 @@
       <span class="detail-value">New York City, NY</span>
     </div>
     <div class="detail-item">
+      <span class="detail-label">Languages</span>
+      <span class="detail-value">German · English · French · Italian · Tamil</span>
+    </div>
+    <div class="detail-item">
       <span class="detail-label">Interests</span>
       <span class="detail-value">Running · Traveling · Crime Novels · Fashion · Painting</span>
+    </div>
+  </div>
+</div>
+
+<!-- RUNNING PHOTO SECTION -->
+<div class="photo-section">
+  <div class="photo-section-img-wrap fade-in">
+    <img src="images/halfmarathon.jpg" alt="Lavinia running a half marathon" class="photo-section-img">
+    <div class="photo-badge">🏅</div>
+  </div>
+  <div class="photo-text fade-in">
+    <p class="section-label">Beyond the Classroom</p>
+    <h2 class="section-title">Running on<br>every road<br><em>I can find</em></h2>
+    <p class="photo-caption">Running is where I do my best thinking. Whether it's a half marathon in Germany or a morning loop through Central Park, lacing up is how I reset. I chase distances the same way I chase ideas — with curiosity, patience, and the belief that the hard part is always worth it.</p>
+    <div class="photo-stats">
+      <div class="photo-stat">
+        <span class="photo-stat-num">21.1km</span>
+        <span class="photo-stat-label">half marathon</span>
+      </div>
+      <div class="photo-stat">
+        <span class="photo-stat-num">5+</span>
+        <span class="photo-stat-label">countries run in</span>
+      </div>
     </div>
   </div>
 </div>
@@ -690,75 +494,34 @@
 <!-- SKILLS -->
 <div class="skills-section" id="skills">
   <p class="section-label">Capabilities</p>
-  <h2 class="section-title">Skills &amp;<br>Languages</h2>
+  <h2 class="section-title">Skills &amp; Languages</h2>
   <div class="skills-grid">
-    <div class="skill-cell">
-      <span class="skill-icon">🇩🇪</span>
-      German<br><small style="opacity:0.6;font-size:0.7rem;">Native</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">🇬🇧</span>
-      English<br><small style="opacity:0.6;font-size:0.7rem;">Fluent</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">🇫🇷</span>
-      French<br><small style="opacity:0.6;font-size:0.7rem;">Fluent</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">🇮🇹</span>
-      Italian<br><small style="opacity:0.6;font-size:0.7rem;">Fluent</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">🇮🇳</span>
-      Tamil<br><small style="opacity:0.6;font-size:0.7rem;">Fluent</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">🐍</span>
-      Python<br><small style="opacity:0.6;font-size:0.7rem;">Programming</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">✏️</span>
-      Design Thinking<br><small style="opacity:0.6;font-size:0.7rem;">Methodology</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">∑</span>
-      Mathematics<br><small style="opacity:0.6;font-size:0.7rem;">Analytical</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">💡</span>
-      Critical Thinking<br><small style="opacity:0.6;font-size:0.7rem;">Strategy</small>
-    </div>
-    <div class="skill-cell">
-      <span class="skill-icon">🎨</span>
-      Painting<br><small style="opacity:0.6;font-size:0.7rem;">Fine Arts</small>
-    </div>
+    <div class="skill-cell"><span class="skill-icon">🇩🇪</span>German<br><small style="opacity:0.6;font-size:0.7rem;">Native</small></div>
+    <div class="skill-cell"><span class="skill-icon">🇬🇧</span>English<br><small style="opacity:0.6;font-size:0.7rem;">Fluent</small></div>
+    <div class="skill-cell"><span class="skill-icon">🇫🇷</span>French<br><small style="opacity:0.6;font-size:0.7rem;">Fluent</small></div>
+    <div class="skill-cell"><span class="skill-icon">🇮🇹</span>Italian<br><small style="opacity:0.6;font-size:0.7rem;">Fluent</small></div>
+    <div class="skill-cell"><span class="skill-icon">🇮🇳</span>Tamil<br><small style="opacity:0.6;font-size:0.7rem;">Fluent</small></div>
+    <div class="skill-cell"><span class="skill-icon">🐍</span>Python<br><small style="opacity:0.6;font-size:0.7rem;">Programming</small></div>
+    <div class="skill-cell"><span class="skill-icon">✏️</span>Design Thinking<br><small style="opacity:0.6;font-size:0.7rem;">Methodology</small></div>
+    <div class="skill-cell"><span class="skill-icon">∑</span>Mathematics<br><small style="opacity:0.6;font-size:0.7rem;">Analytical</small></div>
+    <div class="skill-cell"><span class="skill-icon">💡</span>Critical Thinking<br><small style="opacity:0.6;font-size:0.7rem;">Strategy</small></div>
+    <div class="skill-cell"><span class="skill-icon">🎨</span>Painting<br><small style="opacity:0.6;font-size:0.7rem;">Fine Arts</small></div>
   </div>
 </div>
 
-<!-- LANGUAGES TICKER -->
+<!-- LANGUAGE TICKER -->
 <div class="languages-strip">
   <div class="lang-ticker">
-    <span class="lang-item"><strong>Deutsch</strong> German</span>
-    <span class="lang-dot"></span>
-    <span class="lang-item"><strong>English</strong> Anglais</span>
-    <span class="lang-dot"></span>
-    <span class="lang-item"><strong>Français</strong> French</span>
-    <span class="lang-dot"></span>
-    <span class="lang-item"><strong>Italiano</strong> Italian</span>
-    <span class="lang-dot"></span>
-    <span class="lang-item"><strong>தமிழ்</strong> Tamil</span>
-    <span class="lang-dot"></span>
-    <!-- Duplicate for seamless loop -->
-    <span class="lang-item"><strong>Deutsch</strong> German</span>
-    <span class="lang-dot"></span>
-    <span class="lang-item"><strong>English</strong> Anglais</span>
-    <span class="lang-dot"></span>
-    <span class="lang-item"><strong>Français</strong> French</span>
-    <span class="lang-dot"></span>
-    <span class="lang-item"><strong>Italiano</strong> Italian</span>
-    <span class="lang-dot"></span>
-    <span class="lang-item"><strong>தமிழ்</strong> Tamil</span>
-    <span class="lang-dot"></span>
+    <span class="lang-item"><strong>Deutsch</strong> German</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>English</strong> Anglais</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>Français</strong> French</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>Italiano</strong> Italian</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>தமிழ்</strong> Tamil</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>Deutsch</strong> German</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>English</strong> Anglais</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>Français</strong> French</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>Italiano</strong> Italian</span><span class="lang-dot"></span>
+    <span class="lang-item"><strong>தமிழ்</strong> Tamil</span><span class="lang-dot"></span>
   </div>
 </div>
 
@@ -767,41 +530,67 @@
   <div class="projects-inner">
     <p class="section-label">Selected Work</p>
     <h2 class="section-title">Projects</h2>
-
     <div class="projects-list">
 
+      <!-- 01: Hackathon -->
       <a href="https://www.figma.com/deck/6ULkgEafvoY4CyWZvFtTMc" target="_blank" class="project-item fade-in">
         <div class="project-num">01</div>
         <div class="project-content">
           <span class="project-tag">Hackathon · Design · Strategy</span>
           <h3 class="project-title">Hackathon Project</h3>
-          <p class="project-desc">A project built under pressure — concept, design, and pitch. Developed from scratch during a hackathon, this deck presents a structured solution to a real-world problem.</p>
-          <img src="images/project-1.jpg" alt="Screenshot of hackathon project presentation" class="project-image" style="margin-top:1rem;" onerror="this.style.display='none';">
+          <p class="project-desc">A project built under pressure — concept, design, and pitch developed from scratch. Presents a structured solution to a real-world problem, created in a competitive hackathon environment.</p>
+          <div class="project-preview">
+            <img src="images/project-1.jpg" alt="Hackathon project presentation">
+          </div>
         </div>
         <span class="project-arrow">↗</span>
       </a>
 
+      <!-- 02: Kiva / 180 DC -->
       <a href="https://www.figma.com/deck/7177MdlB24EHJhVz85PaWC" target="_blank" class="project-item fade-in">
         <div class="project-num">02</div>
+        <div class="project-content">
+          <span class="project-tag">Consulting · Impact · 180 Degrees Consulting</span>
+          <h3 class="project-title">Kiva — Maximizing Impact Through Platform Expansion</h3>
+          <p class="project-desc">A consulting case for Kiva, the global microfinance nonprofit. Identified gaps in youth representation and Gen Z engagement, then developed a three-pronged strategy: student venture incubators, insurance de-risking partnerships, and targeted marketing campaigns — projecting growth from $188M to $286M in total loans lent.</p>
+          <div class="project-preview">
+            <img src="images/project-2.jpg" alt="Kiva consulting case">
+          </div>
+        </div>
+        <span class="project-arrow">↗</span>
+      </a>
+
+      <!-- 03: Jumpstart (no link) -->
+      <div class="project-item fade-in">
+        <div class="project-num">03</div>
         <div class="project-content">
           <span class="project-tag">Consulting · Client Work · Jumpstart</span>
           <h3 class="project-title">Jumpstart Consulting Project</h3>
           <p class="project-desc">A real consulting engagement with Jumpstart — researching, synthesizing, and presenting strategic recommendations to an actual client. Applied design thinking and structured problem-solving in a professional context.</p>
-          <img src="images/project-2.jpg" alt="Screenshot of Jumpstart consulting presentation" class="project-image" style="margin-top:1rem;" onerror="this.style.display='none';">
+          <div class="project-preview">
+            <img src="images/project-3.jpg" alt="Jumpstart consulting project">
+          </div>
         </div>
-        <span class="project-arrow">↗</span>
-      </a>
+        <span class="project-arrow" style="opacity:0;">↗</span>
+      </div>
 
     </div>
   </div>
 </section>
+
+<!-- HIBISCUS ACCENT STRIP -->
+<img src="images/Bildschirmfoto_2026-05-01_um_21_11_27.png"
+     alt=""
+     class="hibiscus-divider"
+     onerror="this.style.display='none'; document.getElementById('hibiscus-fallback').style.display='block';">
+<div id="hibiscus-fallback" class="hibiscus-fallback" style="display:none;"></div>
 
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="contact-left fade-in">
     <p class="section-label">Get in Touch</p>
     <h2 class="section-title">Let's connect</h2>
-    <p class="contact-tagline">I'm always open to interesting conversations — about projects, opportunities, or just the places you've been.</p>
+    <p class="contact-tagline">Always open to interesting conversations — about projects, opportunities, or just the places you've been.</p>
     <div class="contact-links">
       <a href="mailto:lavinia.ragunath@stern.nyu.edu" class="contact-link">
         <div>
@@ -815,16 +604,25 @@
           lavinia-ragunath-007530307
         </div>
       </a>
+      <a href="Lavinia_Ragunath_Resume.pdf" target="_blank" class="contact-link">
+        <div>
+          <span class="contact-link-label">Resume</span>
+          Download PDF ↓
+        </div>
+      </a>
     </div>
   </div>
-
   <div class="contact-right fade-in">
     <div class="contact-stat">
       <div class="contact-stat-num">5</div>
       <div class="contact-stat-label">Languages spoken</div>
     </div>
     <div class="contact-stat">
-      <div class="contact-stat-num">2</div>
+      <div class="contact-stat-num">21.1</div>
+      <div class="contact-stat-label">km — half marathon finisher</div>
+    </div>
+    <div class="contact-stat">
+      <div class="contact-stat-num">3</div>
       <div class="contact-stat-label">Projects &amp; counting</div>
     </div>
     <div class="contact-stat">
@@ -836,21 +634,17 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-name">Lavinia Ragunath — NYU Stern '29</span>
-  <span class="footer-note">Weinheim, Germany &rarr; New York City</span>
+  <span class="footer-name">Lavinia Ragunath · NYU Stern '29</span>
+  <span class="footer-note">Weinheim, Germany → New York City ✦</span>
 </footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, { threshold: 0.1 });
-
+  }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
