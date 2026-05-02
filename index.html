@@ -114,24 +114,27 @@
     object-fit: cover; object-position: top center; display: block;
   }
 
-  /* small gold glitter star decorations on hero */
+  /* glitter stars — scattered like the reference photo, over hero-right */
   .hero-stars {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none; overflow: hidden;
+    pointer-events: none; overflow: hidden; z-index: 2;
   }
   .star {
-    position: absolute;
-    font-size: 1rem; opacity: 0.55;
+    position: absolute; line-height: 1;
+    filter: drop-shadow(0 3px 12px rgba(240,168,48,0.6));
     animation: float-star 5s ease-in-out infinite;
   }
-  .star:nth-child(1) { top: 8%; left: 6%; font-size: 1.3rem; animation-delay: 0s; }
-  .star:nth-child(2) { top: 20%; right: 8%; font-size: 0.8rem; animation-delay: 1s; }
-  .star:nth-child(3) { bottom: 30%; left: 10%; font-size: 0.7rem; animation-delay: 2s; }
-  .star:nth-child(4) { bottom: 12%; right: 12%; font-size: 1.1rem; animation-delay: 0.5s; }
+  .star:nth-child(1) { font-size: 5.5rem; top: 3%;   right: 5%;  color: #F0A830; animation-delay: 0s; }
+  .star:nth-child(2) { font-size: 2.8rem; top: 10%;  left: 7%;   color: #E8C060; animation-delay: 0.9s; }
+  .star:nth-child(3) { font-size: 1.8rem; top: 24%;  left: 42%;  color: #D4A820; animation-delay: 1.6s; }
+  .star:nth-child(4) { font-size: 4.8rem; bottom: 6%; left: 4%;  color: #E8A820; animation-delay: 0.4s; }
+  .star:nth-child(5) { font-size: 3.2rem; bottom: 16%; right: 8%; color: #F0C040; animation-delay: 1.2s; }
+  .star:nth-child(6) { font-size: 1.5rem; top: 44%;  right: 12%; color: #D4B040; animation-delay: 2s; }
+  .star:nth-child(7) { font-size: 2.4rem; top: 58%;  left: 16%;  color: #F0A830; animation-delay: 0.6s; }
 
   @keyframes float-star {
-    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.55; }
-    50% { transform: translateY(-8px) rotate(15deg); opacity: 0.85; }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(12deg); }
   }
 
   /* DIVIDER */
@@ -250,7 +253,7 @@
   }
   .lang-ticker {
     display: flex; gap: 3rem; align-items: center;
-    white-space: nowrap; animation: ticker 22s linear infinite; padding: 0 2rem;
+    white-space: nowrap; animation: ticker 12s linear infinite; padding: 0 2rem;
   }
   @keyframes ticker {
     from { transform: translateX(0); }
@@ -422,12 +425,15 @@
   </div>
   <div class="hero-right">
     <img src="images/lavinia_headshot.jpg" alt="Portrait of Lavinia Ragunath" class="hero-image">
-    <!-- subtle gold star accents floating over headshot -->
+    <!-- glitter stars over headshot -->
     <div class="hero-stars">
-      <span class="star" style="color:#F0A830;">✦</span>
-      <span class="star" style="color:#E8709A;">✦</span>
-      <span class="star" style="color:#F0A830;">✦</span>
-      <span class="star" style="color:#C4386A;">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
     </div>
   </div>
 </section>
@@ -547,32 +553,32 @@
       </a>
 
       <!-- 02: Kiva / 180 DC -->
-      <a href="https://www.figma.com/deck/7177MdlB24EHJhVz85PaWC" target="_blank" class="project-item fade-in">
+      <a href="Lavinia_Ragunath_Case_Presentation.pdf" target="_blank" class="project-item fade-in">
         <div class="project-num">02</div>
         <div class="project-content">
           <span class="project-tag">Consulting · Impact · 180 Degrees Consulting</span>
           <h3 class="project-title">Kiva — Maximizing Impact Through Platform Expansion</h3>
           <p class="project-desc">A consulting case for Kiva, the global microfinance nonprofit. Identified gaps in youth representation and Gen Z engagement, then developed a three-pronged strategy: student venture incubators, insurance de-risking partnerships, and targeted marketing campaigns — projecting growth from $188M to $286M in total loans lent.</p>
           <div class="project-preview">
-            <img src="images/project-2.jpg" alt="Kiva consulting case">
+            <img src="images/kiva-slide.jpg" alt="Kiva consulting case presentation slide">
           </div>
         </div>
         <span class="project-arrow">↗</span>
       </a>
 
-      <!-- 03: Jumpstart (no link) -->
-      <div class="project-item fade-in">
+      <!-- 03: Jumpstart -->
+      <a href="https://www.figma.com/deck/7177MdlB24EHJhVz85PaWC" target="_blank" class="project-item fade-in">
         <div class="project-num">03</div>
         <div class="project-content">
           <span class="project-tag">Consulting · Client Work · Jumpstart</span>
           <h3 class="project-title">Jumpstart Consulting Project</h3>
           <p class="project-desc">A real consulting engagement with Jumpstart — researching, synthesizing, and presenting strategic recommendations to an actual client. Applied design thinking and structured problem-solving in a professional context.</p>
           <div class="project-preview">
-            <img src="images/project-3.jpg" alt="Jumpstart consulting project">
+            <img src="images/jumpstart-slide.jpg" alt="Jumpstart consulting project slide">
           </div>
         </div>
-        <span class="project-arrow" style="opacity:0;">↗</span>
-      </div>
+        <span class="project-arrow">↗</span>
+      </a>
 
     </div>
   </div>
