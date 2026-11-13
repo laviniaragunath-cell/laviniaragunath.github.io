@@ -286,7 +286,7 @@ button.slot:hover b{color:var(--red)}
 
 <div class="veil" id="mys" role="dialog" aria-modal="true" aria-labelledby="mysH">
   <div class="game">
-    <div class="ghead"><div><span class="kick">Mini-game · about 3 minutes · just for fun</span><h2 id="mysH">Murder on the Night Train</h2><p>Five passengers boarded with us in Weinheim. At 11:40 pm Baron Emil von Falk was found slumped over his tea in the dining car. Search the train, question the other four, and name the one who did it.</p></div><button class="btn w" data-close id="leave"><span aria-hidden="true">×</span> Leave the game</button></div>
+    <div class="ghead"><div><span class="kick">Mini-game · about 3 minutes · just for fun</span><h2 id="mysH">Murder on the Night Train</h2><p>Five passengers boarded with us in New York. At 11:40 pm Baron Emil von Falk was found slumped over his tea in the dining car. Search the train, question the other four, and name the one who did it.</p></div><button class="btn w" data-close id="leave"><span aria-hidden="true">×</span> Leave the game</button></div>
     <div class="gscene"><div class="cars" role="tablist" id="mTabs"></div><div id="car"></div></div>
     <div class="gside">
       <div class="nb"><h3>Notebook <span id="count"></span></h3><ol id="notes"></ol></div>
@@ -501,6 +501,7 @@ const PAINT=[
   for(let i=0;i<34;i++){const a=rr(330,1320);blob(c,a,rr(432,452),rr(14,26),rr(12,18),pick(AUT),{layers:5,alpha:.15,jit:4})}
   sign(c,'New York')}
 ];
+STOPS.reverse();BIO.reverse();SKY.reverse();PAINT.reverse();
 function landmark(i){if(!LM[i]){const[k,c]=mk(1600,600);R=RNG(100+i*7);UNDER='paper';PAINT[i](c);UNDER=null;LM[i]=k}return LM[i]}
 
 /* ---------- Vasco ---------- */
